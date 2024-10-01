@@ -1,0 +1,73 @@
+$primary-blue-base: #4d19ea;
+$secondary-blue-base: #9d34ec;
+$primary-black-base: #292929;
+$green-base: #60e896;
+$red-base: #ff4965;
+$gray-base: #C4C4C4;
+$light-gray-base: #E4E4E4;
+$dark-gray-base: #8A8A8A;
+$white-base: #FFF;
+$black-base: #000000;
+
+
+$lighten: 20%;
+$darken: 20%;
+
+$colors: (primary-blue: (base: $primary-blue-base,
+        light: lighten($primary-blue-base, $lighten),
+        dark: darken($primary-blue-base, $darken),
+        lighter: #EDF6FE,
+        2: #47a4f9cc,
+        3: #47a4f999,
+        4: #47a4f966,
+        5: #47a4f933,
+    ),
+    secondary-blue: (base: $secondary-blue-base,
+        light: lighten($secondary-blue-base, $lighten),
+        dark: darken($secondary-blue-base, $darken),
+        2: #395a7fcc,
+        3: #395a7f99,
+        4: #395a7f66,
+        5: #395a7f33,
+    ),
+    primary-black: (base: $primary-black-base,
+        light: lighten($primary-black-base, $lighten),
+        dark: darken($primary-black-base, $darken),
+        2: #292929cc,
+        3: #29292999,
+        4: #29292966,
+        5: #29292933,
+    ),
+    green: (base: $green-base,
+        light: lighten($green-base, $lighten),
+        dark: darken($green-base, $darken),
+        2: #60e896cc,
+        3: #60e89699,
+        4: #60e89666,
+        5: #60e89633,
+        6: #c8ffde1e,
+    ),
+    red: (base: $red-base,
+        light: lighten($red-base, $lighten),
+        dark: darken($red-base, $darken),
+        2: #ff4965cc,
+        3: #ff496599,
+        4: #ff496566,
+        5: #ff496533,
+        6: #ffcdd41e,
+    ),
+    gray: (base: $gray-base,
+        light: lighten($gray-base, $lighten),
+        dark: darken($gray-base, $darken),
+        lighter: $light-gray-base,
+        darker: $dark-gray-base,
+        no-hex: E4E4E4),
+    white: (base: $white-base,
+        light: lighten($white-base, $lighten),
+        dark: darken($white-base, $darken),
+    ),
+    black: (base: $black-base,
+        light: lighten($black-base, $lighten),
+        dark: darken($black-base, $darken),
+    ),
+);

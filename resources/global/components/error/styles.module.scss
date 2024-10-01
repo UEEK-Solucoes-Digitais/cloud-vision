@@ -1,0 +1,21 @@
+@use '#admin/utils/getColors' as *;
+@use '#global/mixins/index.scss' as *;
+
+.wrapper {
+    width: 100%;
+
+    &.text-center {
+        text-align: center;
+    }
+
+    &.text-absolute-center {
+        text-align: center;
+        @include absolute-center($axis: 'xy');
+    }
+
+    .error {
+        color: clr(red);
+        font-size: 1rem;
+        font-weight: 600;
+    }
+}

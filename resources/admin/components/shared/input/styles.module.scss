@@ -1,0 +1,133 @@
+@use '#admin/index.scss'as *;
+
+.inputWrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: flex-start;
+    justify-content: flex-start;
+    width: 100%;
+
+    &.colorInput {
+        input {
+            padding: 10px;
+            height: 60px;
+        }
+    }
+
+    &.errorClass {
+
+        input,
+        textarea {
+            border: 1px solid clr(red);
+
+            &:focus,
+            &:hover,
+            &:active {
+                border: 1px solid clr(red);
+            }
+        }
+    }
+
+    &.hidden {
+        visibility: hidden;
+        pointer-events: none;
+        z-index: -999;
+        width: 0px;
+        height: 0px;
+        position: absolute;
+    }
+
+    &.small {
+
+        input,
+        textarea {
+            padding: 15px 20px;
+        }
+    }
+
+    input,
+    textarea {
+        all: unset;
+        width: 100%;
+        box-sizing: border-box;
+        border: 1px solid clr(gray);
+        border-radius: sz(radius, 1);
+        padding: 20px;
+        color: clr(primary-black);
+        @include soft-transition;
+        white-space: normal;
+
+        &::placeholder {
+            color: clr(gray);
+        }
+
+        &:focus,
+        &:hover,
+        &:active {
+            border: 1px solid clr(primary-blue);
+        }
+    }
+
+    textarea {
+        resize: vertical;
+        min-height: 100px;
+    }
+
+    label {
+        font-size: 1rem;
+        color: clr(primary-black);
+        font-weight: 600;
+    }
+
+    .errorMessage {
+        color: clr(red) !important;
+        font-size: sz(text, 3);
+    }
+}
+
+.quillEditor {
+    width: 100%;
+    border-radius: sz(radius, 1);
+
+    :global(.ql-toolbar) {
+        border-radius: 10px 10px 0 0;
+    }
+
+    :global(.ql-container) {
+        border-radius: 0 0 10px 10px;
+    }
+
+    :global(.ql-editor) {
+        padding: 1rem !important;
+        white-space: normal;
+
+        :global(*) {
+            white-space: normal;
+        }
+
+        &:before {
+            font-style: normal;
+        }
+    }
+
+    :global(*) {
+        font-family: inherit !important;
+        font-size: 1rem;
+    }
+}
+
+:global(.ck-editor) {
+    --ck-border-radius: 10px;
+    --ck-color-engine-placeholder-text: #{clr(gray)};
+
+    margin-top: 5px !important;
+    width: 100% !important;
+}
+
+:global(.ck) {
+
+    :global(.ck-powered-by) {
+        display: none !important;
+    }
+}

@@ -1,0 +1,71 @@
+{
+    "compilerOptions": {
+        "outDir": "./public/build",
+        "allowJs": false,
+        "target": "esnext",
+        "module": "esnext",
+        "moduleResolution": "bundler",
+        "types": [
+            "vite/client"
+        ],
+        "useDefineForClassFields": true,
+        "lib": [
+            "esnext",
+            "DOM",
+            "DOM.Iterable"
+        ],
+        "skipLibCheck": true,
+        "resolveJsonModule": true,
+        "isolatedModules": true,
+        "jsx": "react-jsx",
+        "noUnusedLocals": true,
+        "noUnusedParameters": true,
+        "incremental": true,
+        "forceConsistentCasingInFileNames": true,
+        "noEmit": true,
+        "noEmitOnError": true,
+        "allowSyntheticDefaultImports": true,
+        "allowImportingTsExtensions": true,
+        "strict": true,
+        "strictNullChecks": true,
+        "esModuleInterop": true,
+        "importHelpers": true,
+        "removeComments": true,
+        "paths": {
+            "@admin/*": [
+                "./resources/admin/*"
+            ],
+            "#admin/*": [
+                "./resources/admin/styles/*"
+            ],
+            "@global/*": [
+                "./resources/global/*"
+            ],
+            "#global/*": [
+                "./resources/global/styles/*"
+            ],
+            "@/*": [
+                "./resources/site/*"
+            ],
+            "#/*": [
+                "./resources/site/styles/*"
+            ],
+            "@public/*": [
+                "./public/*"
+            ],
+            "ziggy-js": ["./vendor/tightenco/ziggy"]
+        }
+    },
+    "include": [
+        "resources",
+        "global.d.ts",
+        "vite.config.ts",
+        "**/*.ts",
+        "**/*.tsx"
+    ],
+    "exclude": [
+        "node_modules",
+        "vendor",
+        "public"
+    ]
+}

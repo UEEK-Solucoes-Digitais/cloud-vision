@@ -1,0 +1,94 @@
+@use '#admin/index.scss' as *;
+@import '#admin/mixins';
+
+.tableRoot {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    background: #FFF;
+    border-radius: sz(radius, 1);
+    border: 1px solid clr(gray);;
+
+    :global(.highlight-row) {
+        background: rgba(71, 163, 249, 0.219);
+    }
+
+    .tableRow {
+        display: grid;
+        overflow-x: hidden;
+        padding: 17px;
+        position: relative;
+        gap: 50px;
+        @include soft-transition;
+
+        &.highlight {
+            background: rgba(71, 164, 249, 0.10);
+        }
+
+        &.sortable {
+
+            &:hover {
+                padding-left: 30px;
+
+                :global(.drag-row) {
+                    left: 8px;
+                    opacity: 1;
+                }
+            }
+
+            :global(.drag-row:active) {
+                &~.tableRow {
+                    background: rgba(71, 164, 249, 0.10);
+                }
+            }
+        }
+
+        :global(.drag-row) {
+            cursor: pointer;
+            font-size: 1rem;
+            font-weight: 500;
+
+            position: absolute;
+            top: 50%;
+            transform: translateY(-48%);
+            left: -15px;
+
+            opacity: 0;
+
+            color: clr(primary-blue);
+
+            transition: 0.2s all ease-in-out;
+        }
+    }
+
+    .tableCell {
+        font-size: sz(text, 2);
+        color: clr(primary-black);
+        display: flex;
+        align-items: center;
+
+        &.overflowEllipsis{
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+    }
+
+    .tableHeader {
+        .tableCell {
+            font-weight: 600;
+        }
+    }
+
+    .tableBody {
+        .tableRow {
+            border-top: 1px solid clr(gray);;
+        }
+    }
+}
+
+.tableSearch {
+    max-width: 400px;
+    margin-bottom: 10px;
+    margin-left: auto;
+}

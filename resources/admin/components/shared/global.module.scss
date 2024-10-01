@@ -1,0 +1,72 @@
+@use '#admin/variables/sizes.scss' as *;
+
+
+@each $size, $value in map-get($sizes, 'radius') {
+    .radius-#{$size} {
+        border-radius: $value;
+    }
+}
+
+@each $size, $value in map-get($sizes, 'margin') {
+    .margin-#{$size} {
+        margin: $value;
+    }
+
+    .margin-top-#{$size} {
+        margin-top: $value;
+    }
+
+    .margin-bottom-#{$size} {
+        margin-bottom: $value;
+    }
+
+    .margin-start-#{$size} {
+        margin-left: $value; 
+    }
+
+    .margin-end-#{$size} {
+        margin-right: $value;
+    }
+
+    .margin-horizontal-#{$size} {
+        margin-right: $value;
+        margin-left: $value;
+    }
+
+    .margin-vertical-#{$size} {
+        margin-top: $value;
+        margin-bottom: $value;
+    }
+}
+
+@each $size, $value in map-get($sizes, 'padding') {
+    .padding-#{$size} {
+        padding: $value;
+    }
+
+    .padding-top-#{$size} {
+        padding-top: $value;
+    }
+
+    .padding-bottom-#{$size} {
+        padding-bottom: $value;
+    }
+
+    .padding-start-#{$size} {
+        padding-left: $value;
+    }
+
+    .padding-end-#{$size} {
+        padding-right: $value;
+    }
+
+    .padding-horizontal-#{$size} {
+        padding-right: $value;
+        padding-left: $value;
+    }
+
+    .padding-vertical-#{$size} {
+        padding-top: $value;
+        padding-bottom: $value;
+    }
+}

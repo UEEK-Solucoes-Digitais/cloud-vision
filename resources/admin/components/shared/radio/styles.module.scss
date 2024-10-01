@@ -1,0 +1,78 @@
+@use '#admin/index.scss' as *;
+@import '#admin/mixins';
+
+.radioGroup{
+    label {
+        font-size: 1rem;
+        color: clr(primary-black);
+        font-weight: 600;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        cursor: pointer;
+    }
+
+    .radioFlex{
+        display: flex;
+        align-items: center;
+        gap: 30px;
+        margin-top: 10px;
+    }
+}
+
+.radioWrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    input:checked{
+        &~.boxOuter {
+            border: 1px solid clr(primary-blue);
+
+            .boxInner {
+                transform: translate(-53%, -53%) scale(1);
+            }
+
+        }
+
+        &~span{
+            color: clr(primary-blue);
+        }
+    }
+
+    .boxOuter {
+        border-radius: 5px;
+        border: 1px solid clr(gray, lighter);
+        cursor: pointer;
+        position: relative;
+        width: 25px;
+        height: 25px;
+        cursor: pointer;
+        border-radius: 50%;
+        @include soft-transition;
+
+        &:hover {
+            border: 1px solid clr(primary-blue);
+            box-shadow: 0px 0px 6px 0px #98CBFF;
+        }
+
+        .boxInner {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: absolute;
+            width: 70%;
+            height: 70%;
+            border-radius: 2px;
+            background: clr(primary-blue);
+            top: 50%;
+            left: 50%;
+            border-radius: 50%;
+            transform: translate(-50%, -50%) scale(0);
+            @include soft-transition;
+
+        }
+    }
+
+}

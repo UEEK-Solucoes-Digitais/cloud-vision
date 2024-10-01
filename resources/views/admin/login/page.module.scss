@@ -1,0 +1,65 @@
+@use '#admin/index.scss' as *;
+
+$form-values: (1, 2, 3);
+
+.main {
+    padding: 0px 115px;
+    position: relative;
+    width: 100%;
+    height: 1px;
+    min-height: 100vh;
+
+    .background {
+        height: 100%;
+        left: 0;
+        position: absolute;
+        top: 0;
+        width: 100%;
+
+        img {
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+            width: 100%;
+        }
+    }
+
+    .content {
+        height: 100%;
+        position: relative;
+        width: 100%;
+        z-index: 1;
+    }
+
+    .loginBox {
+        min-width: 545px;
+    }
+
+    .flexContainer {
+        height: 100%;
+    }
+
+    .loginAsset {
+        align-self: end;
+    }
+
+    @each $number in $form-values {
+        .form-#{$number} {
+            opacity: 1;
+            animation-duration: .5s;
+            animation-timing-function: ease;
+            will-change: opacity;
+            animation-name: fadeIn;
+        }
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}

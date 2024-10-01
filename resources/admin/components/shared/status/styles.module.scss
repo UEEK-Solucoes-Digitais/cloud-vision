@@ -1,0 +1,42 @@
+@use '#admin/index.scss' as *;
+
+.statusStyle {
+    font-size: sz(text, 2);
+    padding: 5px 8px;
+    border-radius: sz(radius, 5);
+    background: rgba(96, 232, 150, 0.20);
+    color: #5CCF8A;
+    width: fit-content;
+    padding-left: 20px;
+    position: relative;
+
+    &:before {
+        content: '';
+        background: #5CCF8A;
+        border-radius: 50%;
+        width: 7px;
+        height: 7px;
+        position: absolute;
+        left: 8px;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+
+    &.green {
+        background: rgba(96, 232, 150, 0.20);
+        color: #5CCF8A;
+
+        &:before {
+            background: #5CCF8A;
+        }
+    }
+
+    &.red {
+        background: rgba(255, 73, 101, 0.10);
+        color: #FF4965;
+
+        &:before {
+            background: #FF4965;
+        }
+    }
+}

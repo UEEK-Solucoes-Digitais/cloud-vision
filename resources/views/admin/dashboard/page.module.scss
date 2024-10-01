@@ -1,0 +1,32 @@
+@use'#admin/index.scss' as *;
+
+.dashboardBox {
+    padding: 30px;
+    border-radius: sz(radius, 1);
+    border: 1px solid clr(gray);
+    background: #fff;
+
+    p {
+        color: clr(primary-black);
+        margin-top: 15px;
+    }
+}
+
+.animTest {
+    opacity: 1;
+    animation-name: fadeIn;
+    animation-fill-mode: forwards;
+    will-change: opacity, transform;
+    animation-duration: .5s;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(75px);
+    }
+}

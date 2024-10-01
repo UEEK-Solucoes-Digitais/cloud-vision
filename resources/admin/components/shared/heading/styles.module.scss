@@ -1,0 +1,39 @@
+.heading {
+    line-height: 100%;
+    font-weight: 600;
+
+    &.withImage {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+    }
+
+    &[data-element="h1"] {
+        font-size: 2rem;
+        font-weight: 700;
+    }
+
+    &[data-element="h2"] {
+        font-size: 1.5rem;
+    }
+
+    &[data-element="h3"] {
+        font-size: 1.25rem;
+    }
+
+    &[data-element="h4"] {
+        font-size: 0.875rem;
+    }
+
+    &.align-start {
+        text-align: start;
+    }
+
+    &.align-center {
+        text-align: center;
+    }
+
+    &.align-end {
+        text-align: end;
+    }
+}

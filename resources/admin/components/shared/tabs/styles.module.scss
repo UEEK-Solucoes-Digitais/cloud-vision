@@ -1,0 +1,26 @@
+@import "#admin/admin-config.module";
+@import "#admin/mixins";
+
+.Root {
+    .List {
+
+        .Trigger {
+            all: unset;
+            background: clr(white);
+            color: clr(primary-blue);
+            padding: 12px 30px;
+            cursor: pointer;
+            @include soft-transition;
+
+            &:not(:first-child) {
+                border-left: 1px solid clr(primary-blue);
+            }
+
+            &[data-state="active"],
+            &:hover {
+                background: clr(primary-blue);
+                color: clr(white);
+            }
+        }
+    }
+}

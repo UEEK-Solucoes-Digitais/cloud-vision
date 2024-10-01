@@ -1,0 +1,17 @@
+@use '#admin/index.scss'as *;
+
+.recoveryLink {
+    all: unset;
+    cursor: pointer;
+    color: clr(primary-blue);
+    font-size: sz(text, 1);
+    font-weight: 700;
+    margin-top: -8px;
+    margin-left: auto;
+
+    @include soft-transition;
+
+    &:hover {
+        color: clr(primary-blue, dark)
+    }
+}

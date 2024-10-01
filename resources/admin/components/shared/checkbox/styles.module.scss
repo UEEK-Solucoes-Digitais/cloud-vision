@@ -1,0 +1,74 @@
+@use '#admin/index.scss'as *;
+@import '#admin/mixins';
+
+.checkboxWrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+    justify-content: center;
+
+    &.errorClass {
+        .boxOuter {
+            border: 1px solid clr(red);
+
+            &:focus,
+            &:hover,
+            &:active {
+                border: 1px solid clr(red);
+            }
+        }
+    }
+
+    input:checked~.boxOuter {
+        border: 1px solid clr(primary-blue);
+
+        .boxInner {
+            transform: translate(-52.3%, -52.3%) scale(1);
+        }
+
+    }
+
+    .boxOuter {
+        align-items: center;
+        border-radius: 5px;
+        border: 1px solid clr(gray, lighter);
+        display: flex;
+        cursor: pointer;
+        justify-content: center;
+        position: relative;
+        width: 25px;
+        height: 25px;
+        cursor: pointer;
+        @include soft-transition;
+
+        &:hover {
+            border: 1px solid clr(primary-blue);
+            box-shadow: 0px 0px 6px 0px #98CBFF;
+        }
+
+        .boxInner {
+            position: absolute;
+            width: 70%;
+            height: 70%;
+            border-radius: 2.5px;
+            background: clr(primary-blue);
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) scale(0);
+            @include soft-transition;
+
+        }
+    }
+
+    label {
+        font-size: 1rem;
+        color: clr(primary-black);
+        font-weight: 600;
+    }
+
+    .errorMessage {
+        color: clr(red) !important;
+        font-size: sz(text, 3);
+    }
+}

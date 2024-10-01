@@ -1,0 +1,38 @@
+@mixin absolute-center($axis: 'xy', $transform: null, $zIndex: auto) {
+    position: absolute;
+    z-index: $zIndex;
+    
+    $translateX: null;
+    $translateY: null;
+
+    @if $axis=='x' {
+        $translateX: -50%;
+    }
+    @if $axis=='y' {
+        $translateY: -50%;
+    }
+    @if $axis=='xy' {
+        $translateX: -50%;
+        $translateY: -50%;
+    }
+
+    @if $axis=='x' or $axis=='xy' {
+        left: 50%;
+    }
+    @if $axis=='y' or $axis=='xy' {
+        top: 50%;
+    }
+
+    transform: translate($translateX, $translateY) $transform;
+}
+
+@mixin absolute-positioning($left: 0, $top: 0, $zIndex: auto, $transform: null) {
+    position: absolute;
+    left: $left;
+    top: $top;
+    z-index: $zIndex;
+
+    @if($transform){
+        transform: $transform;
+    }
+}

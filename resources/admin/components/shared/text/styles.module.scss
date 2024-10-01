@@ -1,0 +1,24 @@
+@use '#admin/utils/index.scss' as *;
+
+.text{
+    line-height: 20px;
+    font-weight: normal;
+    font-size: sz(text, 1);
+    color: clr(gray);;
+
+    &.dark{
+        color: clr(primary-black);
+    }
+
+    &.align-start{
+        text-align: start;
+    }
+
+    &.align-center{
+        text-align: center;
+    }
+
+    &.align-end{
+        text-align: end;
+    }
+}

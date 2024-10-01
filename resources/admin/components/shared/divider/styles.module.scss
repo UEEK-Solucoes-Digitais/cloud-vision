@@ -1,0 +1,7 @@
+@use '#admin/index.scss'as *;
+
+.divider {
+    height: 1px;
+    width: 100%;
+    background: clr(gray, lighter);
+}

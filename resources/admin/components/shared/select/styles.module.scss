@@ -1,0 +1,101 @@
+@use '#admin/index.scss'as *;
+@import '#admin/mixins';
+
+.inputWrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: flex-start;
+    justify-content: flex-start;
+    width: 100%;
+
+    .selectTrigger {
+        all: unset;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+        box-sizing: border-box;
+        border: 1px solid clr(gray);
+        ;
+        border-radius: sz(radius, 1);
+        padding: 20px;
+        color: clr(primary-black);
+        @include soft-transition;
+        white-space: normal;
+
+        &:focus,
+        &:hover,
+        &:active {
+            border: 1px solid clr(primary-blue);
+        }
+    }
+
+    &.errorClass {
+        .selectTrigger {
+            border: 1px solid clr(red);
+
+            &:focus,
+            &:hover,
+            &:active {
+                border: 1px solid clr(red);
+            }
+        }
+    }
+
+    &.hidden {
+        visibility: hidden;
+        pointer-events: none;
+        z-index: -999;
+        width: 0px;
+        height: 0px;
+        position: absolute;
+    }
+
+    &.small {
+
+        .selectTrigger {
+            padding: 15px 20px;
+        }
+    }
+
+    label {
+        font-size: 1rem;
+        color: clr(primary-black);
+        font-weight: 600;
+    }
+
+    .errorMessage {
+        color: clr(red) !important;
+        font-size: sz(text, 3);
+    }
+}
+
+.contentSelect {
+    background-color: #fff;
+    min-width: 300px;
+    max-height: 500px;
+    overflow: hidden;
+    z-index: 1000;
+    width: 100%;
+
+    .selectOption {
+        cursor: pointer;
+        padding: 10px 14px;
+        @include soft-transition;
+
+        &:not(:last-child) {
+            border-bottom: 1px solid clr(gray);
+        }
+
+        &:hover {
+            background-color: clr(primary-blue, lighter);
+        }
+    }
+}
+
+.viewportScrollable {
+    max-height: 450px;
+    overflow-y: auto;
+}

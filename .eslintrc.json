@@ -1,0 +1,33 @@
+{
+    "extends": [
+        "plugin:react/jsx-runtime",
+        "@rocketseat/eslint-config/react",
+        "eslint:recommended"
+    ],
+    "plugins": [
+        "react-hooks"
+    ],
+    "rules": {
+        "prettier/prettier": [
+            "error",
+            {
+                "printWidth": 120,
+                "tabWidth": 4,
+                "singleQuote": true,
+                "trailingComma": "all",
+                "arrowParens": "always",
+                "semi": false,
+                "endOfLine": "auto"
+            }
+        ],
+        "react/no-array-index-key": "warn",
+        "react-hooks/rules-of-hooks": "error",
+        "react/no-unescaped-entities": "warn",
+        "react-hooks/exhaustive-deps": "warn",
+        "@typescript-eslint/no-explicit-any": "off", // warn
+        "@typescript-eslint/explicit-module-boundary-types": "off",
+        "no-debugger": "off",
+        "no-var": "off",
+        "no-undef": "off"
+    }
+}

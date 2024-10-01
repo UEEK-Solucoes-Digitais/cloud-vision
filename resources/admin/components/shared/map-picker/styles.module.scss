@@ -1,0 +1,23 @@
+@use '#admin/index.scss'as *;
+@import '#admin/mixins';
+
+.flexMap {
+    align-items: center;
+    display: flex;
+    gap: 10px;
+
+    button {
+        align-items: center;
+        display: flex;
+        flex-shrink: 0;
+        gap: 10px;
+        height: 42px;
+        justify-content: center;
+        padding: 12px 20px;
+        // width: 42px !important;
+
+        :global(.iconify) {
+            font-size: 24px;
+        }
+    }
+}

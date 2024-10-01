@@ -1,0 +1,83 @@
+@use '#admin/index.scss' as *;
+@import '#admin/mixins';
+
+.container {
+    border: 1px solid clr(gray);;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    padding: 20px 15px 10px;
+
+    label {
+        font-size: 1rem;
+        color: clr(primary-black);
+        font-weight: 600;
+        margin-bottom: 20px;
+    }
+}
+
+.inputGroup {
+    align-items: center;
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+
+    input {
+        border-bottom: 1px solid clr(gray);;
+        padding: 5px 15px 5px 10px;
+
+        &::placeholder {
+            color: clr(gray);;
+        }
+    }
+
+    button {
+        cursor: pointer;
+        background-color: clr(primary-blue);
+        color: #FFF;
+        border: none;
+        border-radius: 5px;
+        height: 24px;
+        width: 24px;
+        align-items: center;
+        display: flex;
+        justify-content: center;
+        text-align: center;
+        @include soft-transition;
+
+        &:hover {
+            transform: translateY(-2px);
+        }
+    }
+}
+
+.wordList {
+    padding: 0;
+}
+
+.wordItem {
+    margin: 10px 0;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    .removeButton {
+        margin-left: 10px;
+        cursor: pointer;
+        background-color: clr(red);
+        color: #FFF;
+        border: none;
+        border-radius: 5px;
+        height: 24px;
+        width: 24px;
+        align-items: center;
+        display: flex;
+        justify-content: center;
+        text-align: center;
+        @include soft-transition;
+
+        &:hover {
+            transform: translateY(-2px);
+        }
+    }
+}

@@ -1,0 +1,6 @@
+@use '../variables/sizes' as *;
+
+@function sz($item, $relative) {
+    $size: map-get(map-get($sizes, $item), $relative);
+    @return $size;
+}

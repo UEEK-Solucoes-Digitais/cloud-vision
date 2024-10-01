@@ -1,0 +1,52 @@
+.flexContainer {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 12px;
+    width: 100%;
+
+    // :global(*) {
+    //     :not(:global(.ck)):not([data-placeholder]) {
+    //         height: fit-content;
+    //         white-space: nowrap;
+    //     }
+
+    //     :has(:global(.ck)) {
+    //         max-width: 100%;
+    //     }
+    // }
+
+    $alignments: (start flex-start,
+            end flex-end,
+            center center);
+    $justifications: (start flex-start,
+            end flex-end,
+            center center,
+            space-between space-between);
+
+    @each $align in $alignments {
+        $name: nth($align, 1);
+        $value: nth($align, 2);
+
+        &.align-#{$name} {
+            align-items: $value;
+        }
+    }
+
+    @each $justify in $justifications {
+        $name: nth($justify, 1);
+        $value: nth($justify, 2);
+
+        &.justify-#{$name} {
+            justify-content: $value;
+        }
+    }
+
+    &.column {
+        flex-direction: column;
+    }
+
+    &.row {
+        flex-direction: row;
+    }
+}

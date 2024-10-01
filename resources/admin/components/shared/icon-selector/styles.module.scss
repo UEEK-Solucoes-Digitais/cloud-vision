@@ -1,0 +1,89 @@
+@use '#admin/index.scss' as *;
+@import '#admin/mixins';
+
+.iconSelectorWrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+
+    label {
+        font-weight: 600;
+    }
+
+    .message {
+        font-size: 1rem;
+        padding: 10px;
+    }
+
+    .iconSelectorDiv {
+        margin-top: 8px;
+        position: relative;
+    }
+
+    .toggleSelector {
+        border-radius: sz(radius, 1);
+        border: 1px solid clr(gray);;
+        background: none;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 62px;
+        height: 62px;
+        font-size: 30px;
+        @include soft-transition;
+
+        &:hover,
+        &.active {
+            border-color: clr(primary-blue);
+        }
+    }
+
+    .iconSelector {
+        border: 1px solid clr(gray);;
+        position: absolute;
+        left: 0;
+        top: 110%;
+        z-index: 20;
+        background: #fff;
+        border-radius: sz(radius, 1);
+        width: 550px;
+        padding: 10px;
+
+        .iconSelectorGrid {
+            max-height: 400px;
+            overflow: auto;
+            flex-wrap: wrap;
+            gap: 5px;
+            display: flex;
+            align-items: flex-start;
+            justify-content: flex-start;
+            height: fit-content;
+        }
+
+        button {
+            background: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 35px;
+            height: 35px;
+            font-size: 22px;
+            @include soft-transition;
+
+            &:hover {
+                border-radius: sz(radius, 1);
+                background: rgba(0, 0, 0, 0.06);
+            }
+
+            &[data-active="true"] {
+                border-radius: sz(radius, 1);
+                background: $primary-blue-4;
+            }
+        }
+    }
+}
+
+.errorMessage {
+    color: clr(red) !important;
+    font-size: sz(text, 3);
+}

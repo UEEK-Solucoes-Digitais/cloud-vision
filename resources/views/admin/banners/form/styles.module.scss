@@ -1,0 +1,9 @@
+@use'#admin/index.scss' as *;
+
+.passwordSuccess {
+    color: clr(green);
+}
+
+.passwordError {
+    color: clr(red);
+}

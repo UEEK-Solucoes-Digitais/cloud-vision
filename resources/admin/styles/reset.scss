@@ -1,0 +1,166 @@
+@use './index.scss'as *;
+
+* {
+    -webkit-font-smoothing: antialiased;
+    -moz-font-smoothing: antialiased;
+    -ms-font-smoothing: antialiased;
+    -o-font-smoothing: antialiased;
+    box-sizing: border-box !important;
+    border: 0;
+    color: inherit;
+    font: inherit;
+    margin: 0;
+    outline: none;
+    padding: 0;
+    text-decoration: none;
+    text-rendering: optimizeLegibility;
+    vertical-align: baseline;
+    text-size-adjust: none;
+
+    &::-webkit-scrollbar {
+        height: 6px;
+        width: 4px;
+    }
+
+    &::-webkit-scrollbar-track {
+        border-radius: 30px;
+    }
+
+    &::-webkit-scrollbar-thumb {
+        background-color: clr(primary-blue);
+    }
+
+    &::selection {
+        background-color: clr(primary-blue);
+        color: clr(white);
+    }
+}
+
+html,
+body {
+    max-width: 100vw;
+    overflow-x: hidden;
+    font-family: $font-inter;
+    font-size: sz(text, 1);
+    font-weight: 400;
+    color: clr(primary-black);
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: clr(white);
+    min-height: 100dvh;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+button {
+    cursor: pointer;
+}
+
+h1,
+h2,
+h3 {
+    margin-bottom: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    text-wrap: balance;
+}
+
+p {
+    text-wrap: pretty;
+}
+
+b,
+strong {
+    font-weight: 700 !important;
+}
+
+em,
+i {
+    font-style: italic !important;
+}
+
+u {
+    text-decoration: underline !important;
+}
+
+s {
+    text-decoration: line-through !important;
+}
+
+.divide-inline {
+    align-items: center;
+    display: flex;
+    gap: 10px;
+    width: 100%;
+}
+
+.group-flex-input {
+    border: 1px solid clr(gray);
+    border-radius: 10px;
+    padding: 15px 20px;
+    @include soft-transition;
+
+    &:hover {
+        border-color: clr(primary-blue);
+    }
+}
+
+.error-input {
+    color: clr(red) !important;
+    line-height: 20px;
+    font-weight: normal;
+    font-size: sz(text, 3);
+}
+
+#nprogress {
+
+    .bar {
+        background: clr(primary-blue) !important;
+        height: 3px !important;
+        opacity: 1 !important;
+    }
+
+    .peg {
+        box-shadow: 0 0 10px clr(primary-blue), 0 0 5px clr(primary-blue) !important;
+    }
+}
+
+[data-skeleton="true"] {
+    .iconify {
+        color: clr(primary-blue);
+    }
+}
+
+
+.w-100 {
+    width: 100%;
+}
+
+
+.drag-row {
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 500;
+
+    position: absolute;
+    top: 50%;
+    transform: translateY(-48%);
+    left: -15px;
+
+    opacity: 0;
+
+    color: clr(primary-blue);
+
+    transition: 0.2s all ease-in-out;
+}

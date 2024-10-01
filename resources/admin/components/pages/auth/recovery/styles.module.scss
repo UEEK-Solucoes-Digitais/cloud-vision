@@ -1,0 +1,15 @@
+@use '#admin/index.scss' as *;
+
+.headingButton {
+    all: unset;
+    cursor: pointer;
+    font-size: sz(title, 1);
+    height: 30px;
+    color: clr(black);
+    @include soft-transition;
+
+    &:hover {
+        color: clr(primary-blue);
+    }
+
+}
